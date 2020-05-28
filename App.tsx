@@ -6,6 +6,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import MainScreen from './src/screens/MainScreen';
 import MapScreen from './src/screens/MapScreen';
+import ContactScreen from './src/screens/ContactScreen';
 
 const StackNavigator = createStackNavigator({
   'Main': {
@@ -18,6 +19,15 @@ const StackNavigator = createStackNavigator({
         flex: 1
       },
       headerTitle: 'Mapa'
+    }
+  },
+  'Contacts': {
+    screen: ContactScreen,
+    navigationOptions: {
+      headerTitleStyle: {
+        flex: 1
+      },
+      headerTitle: 'Contatos'
     }
   }
 }, {

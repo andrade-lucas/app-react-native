@@ -3,13 +3,15 @@ import MapView from 'react-native-maps';
 import { StyleSheet, View, Dimensions } from 'react-native';
 
 import Footer from '../components/Footer';
+import FloatButton from '../components/FloatButton';
 
 export default class MapScreen extends React.Component {
     render() {
         return (
             <View style={styles.container}>
                 <MapView style={styles.mapStyle} />
-                <Footer />
+                {/* <Footer /> */}
+                <FloatButton />
             </View>
         );
     }
