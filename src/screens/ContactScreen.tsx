@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, ScrollView, Text } from 'react-native';
+import { StyleSheet, ScrollView, View, Text, TouchableOpacity } from 'react-native';
 
-import FloatButton from '../components/FloatButton';
 import Footer from '../components/Footer';
+import ItemList from '../components/ItemList';
+import FloatButton from '../components/FloatButton';
 
 interface Props {
     navigation: any
@@ -11,10 +12,31 @@ interface Props {
 export default class ContactScreen extends React.Component<Props> {
     render() {
         return (
-            <ScrollView style={styles.container}>
-                <Text>This is the ContactScreen page!</Text>
-                <FloatButton />
-            </ScrollView>
+            <View style={styles.container}>
+                <ScrollView style={styles.contacts}>
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                    <ItemList />
+                </ScrollView>
+                <View style={styles.btnAdd}>
+                    <FloatButton btnPress={(pageParams: any) => { this.props.navigation.navigate('CreateContact') } } />
+                </View>
+                <Footer />
+            </View>
         );
     }
 }
@@ -22,5 +44,12 @@ export default class ContactScreen extends React.Component<Props> {
 const styles = StyleSheet.create({
     container: {
         flex: 1
+    },
+    btnAdd: {
+        marginBottom: '13%',
+        marginLeft: '80%'
+    },
+    contacts: {
+        // marginBottom: '5%'
     }
 });

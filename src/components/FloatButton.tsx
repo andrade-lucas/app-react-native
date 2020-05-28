@@ -4,22 +4,31 @@ import { StyleSheet, View, TouchableOpacity } from 'react-native';
 
 export default function FloatButton(props: any) {
     return (
-        <TouchableOpacity style={styles.container}>
-            <Ionicons name="ios-add" size={60} color="#fff" />
+        <TouchableOpacity style={styles.container} onPress={() => props.btnPress()}>
+            <View style={styles.btn}>
+                <Ionicons name="ios-add" size={60} color="#2282e3" />
+            </View>
         </TouchableOpacity>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        height: 80,
-        width: 80,
+        height: 60,
+        width: 60,
         position: 'absolute',
-        bottom: 0,
+        bottom: 10,
         marginBottom: 15,
         marginRight: 15,
-        justifyContent: 'flex-end',
-        borderColor: '#c5c5c5',
-        borderRadius: 50
+        flexDirection: 'row',
+        justifyContent: 'flex-end'
+    },
+    btn: {
+        flex: 1,
+        backgroundColor: '#fff',
+        borderRadius: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
+        elevation: 10
     }
 });

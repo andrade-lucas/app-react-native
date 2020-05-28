@@ -7,6 +7,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import MainScreen from './src/screens/MainScreen';
 import MapScreen from './src/screens/MapScreen';
 import ContactScreen from './src/screens/ContactScreen';
+import CreateContactScreen from './src/screens/CreateContactScreen';
 
 const StackNavigator = createStackNavigator({
   'Main': {
@@ -24,10 +25,13 @@ const StackNavigator = createStackNavigator({
   'Contacts': {
     screen: ContactScreen,
     navigationOptions: {
-      headerTitleStyle: {
-        flex: 1
-      },
       headerTitle: 'Contatos'
+    }
+  },
+  'CreateContact': {
+    screen: CreateContactScreen,
+    navigationOptions: {
+      headerTitle: 'Adicionar Contato'
     }
   }
 }, {
@@ -44,7 +48,7 @@ const StackNavigator = createStackNavigator({
     headerTintColor: '#fff',
     headerRight: () => (
       <TouchableOpacity style={{ flex: 1, marginRight: 15, justifyContent: 'center' }}>
-        <Ionicons name="ios-information-circle" size={30} color="#fff" />
+        <Ionicons name="ios-exit" size={30} color="#fff" />
       </TouchableOpacity>
     )
   }
