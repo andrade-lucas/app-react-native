@@ -1,27 +1,42 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import MainScreen from './src/screens/MainScreen';
+import MapScreen from './src/screens/MapScreen';
 
 const StackNavigator = createStackNavigator({
   'Main': {
-    screen: MainScreen,
+    screen: MainScreen
+  },
+  'Maps': {
+    screen: MapScreen,
     navigationOptions: {
-      headerTitle: (
-        <Image source={{uri: 'https://pt.freelogodesign.org/Content/img/logo-samples/flooop.png'}} 
-        style={{height: 40, width: 100, justifyContent: 'center'}} />
-      ),
-      // title: 'ANDRADE Corp.',
       headerTitleStyle: {
-        alignSelf: 'center',
-        color: '#fff'
+        flex: 1
       },
-      headerStyle: {
-        backgroundColor: '#2282e3'
-      }
+      headerTitle: 'Mapa'
     }
+  }
+}, {
+  defaultNavigationOptions: {
+    headerTitle: () => (
+      <View style={{ flex: 4, alignItems: 'center', justifyContent: 'center' }}>
+        <Image source={require('./assets/img/logo-2.png')}
+          style={{ height: 30, width: 130 }} />
+      </View>
+    ),
+    headerStyle: {
+      backgroundColor: '#2282e3'
+    },
+    headerTintColor: '#fff',
+    headerRight: () => (
+      <TouchableOpacity style={{ flex: 1, marginRight: 15, justifyContent: 'center' }}>
+        <Ionicons name="ios-information-circle" size={30} color="#fff" />
+      </TouchableOpacity>
+    )
   }
 });
 

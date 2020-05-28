@@ -1,21 +1,22 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 
 export default function FooterItem(props: any) {
     return (
-        <View>
-            <Text style={styles.footerItem}>{props.label}</Text>
-        </View>
+        <TouchableOpacity onPress={() => alert('You clicked on here!')} style={styles.container}>
+            <Ionicons name={props.icon} size={32} color="#fff" style={styles.icon} />
+        </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
-    footerItem: {
-        color: '#2282e3',
-        backgroundColor: '#fff',
-        padding: 3,
-        margin: 20,
-        borderRadius: 7,
-        justifyContent: 'space-between'
+    container: {
+        flex: 1
+    },
+    icon: {
+        aspectRatio: 1,
+        height: 40,
+        alignSelf: 'center',
     }
 })

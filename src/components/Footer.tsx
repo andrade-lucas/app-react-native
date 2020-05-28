@@ -7,9 +7,9 @@ export default function Footer() {
     return (
         <View style={styles.container}>
             <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}>
-                <FooterItem label="Opcao1" />
-                <FooterItem label="Opcao2" />
-                <FooterItem label="Opcao3" />
+                <FooterItem icon="ios-menu" />
+                <FooterItem icon="ios-home" />
+                <FooterItem icon="ios-person" />
             </View>
         </View>
     );
